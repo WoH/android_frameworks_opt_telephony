@@ -24,15 +24,12 @@ LOCAL_SRC_FILES := $(call all-java-files-under, src/java) \
 	$(call all-Iaidl-files-under, src/java) \
 	$(call all-logtags-files-under, src/java)
 
-<<<<<<< HEAD
 ifneq ($(BOARD_RIL_CLASS),)
 LOCAL_SRC_FILES += $(call find-other-java-files,$(BOARD_RIL_CLASS))
 endif
 
 
-=======
 LOCAL_JAVA_LIBRARIES := voip-common
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := telephony-common
 

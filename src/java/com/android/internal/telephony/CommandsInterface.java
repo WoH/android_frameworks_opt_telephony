@@ -1623,17 +1623,15 @@ public interface CommandsInterface {
      */
     public void testingEmergencyCall();
 
-<<<<<<< HEAD
     /**
      * @hide
      * CM-specific: Ask the RIL about the presence of back-compat flags
      */
     public boolean needsOldRilFeature(String feature);
-=======
 
     /**
      * @return version of the ril.
      */
     int getRilVersion();
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
+
 }
