@@ -213,6 +213,7 @@ class RILRequest {
  */
 public class RIL extends BaseCommands implements CommandsInterface {
     static final String RILJ_LOG_TAG = "RILJ";
+    static final String LOG_TAG = RILJ_LOG_TAG;
     static final boolean RILJ_LOGD = true;
     static final boolean RILJ_LOGV = false; // STOPSHIP if true
 
@@ -2785,7 +2786,7 @@ public class RIL extends BaseCommands implements CommandsInterface {
                 if (RILJ_LOGD) unsljLogRet(response, ret);
 
                 boolean oldRil = needsOldRilFeature("skipbrokendatacall");
-                if (oldRil && "IP".equals(((ArrayList<DataCallState>)ret).get(0).type))
+                if (oldRil && "IP".equals(((ArrayList<DataCallResponse>)ret).get(0).type))
                     break;
 
                 mDataNetworkStateRegistrants.notifyRegistrants(new AsyncResult(null, ret, null));
@@ -3328,7 +3329,7 @@ public class RIL extends BaseCommands implements CommandsInterface {
             if (!TextUtils.isEmpty(addresses)) {
                 dataCall.addresses = addresses.split(" ");
             }
-            // DataCallState needs an ifname. Since we don't have one use the name from the ThrottleService resource (default=rmnet0).
+            // DataCallState/Response needs an ifname. Since we don't have one use the name from the ThrottleService resource (default=rmnet0).
             dataCall.ifname = Resources.getSystem().getString(com.android.internal.R.string.config_datause_iface);
         } else {
             dataCall.status = p.readInt();
