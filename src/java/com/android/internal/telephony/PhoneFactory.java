@@ -115,33 +115,10 @@ public class PhoneFactory {
 
                 // Get cdmaSubscription mode from Settings.Global
                 int cdmaSubscription;
-<<<<<<< HEAD
                 cdmaSubscription = Settings.Global.getInt(context.getContentResolver(),
                                 Settings.Global.CDMA_SUBSCRIPTION_MODE,
                                 preferredCdmaSubscription);
-                Log.i(LOG_TAG, "Cdma Subscription set to " + cdmaSubscription);
-=======
-                int lteOnCdma = TelephonyManager.getLteOnCdmaModeStatic();
-                switch (lteOnCdma) {
-                    case PhoneConstants.LTE_ON_CDMA_FALSE:
-                        cdmaSubscription = CdmaSubscriptionSourceManager.SUBSCRIPTION_FROM_NV;
-                        Rlog.i(LOG_TAG, "lteOnCdma is 0 use SUBSCRIPTION_FROM_NV");
-                        break;
-                    case PhoneConstants.LTE_ON_CDMA_TRUE:
-                        cdmaSubscription = CdmaSubscriptionSourceManager.SUBSCRIPTION_FROM_RUIM;
-                        Rlog.i(LOG_TAG, "lteOnCdma is 1 use SUBSCRIPTION_FROM_RUIM");
-                        break;
-                    case PhoneConstants.LTE_ON_CDMA_UNKNOWN:
-                    default:
-                        //Get cdmaSubscription mode from Settings.System
-                        cdmaSubscription = Settings.Global.getInt(context.getContentResolver(),
-                                Settings.Global.PREFERRED_CDMA_SUBSCRIPTION,
-                                sPreferredCdmaSubscription);
-                        Rlog.i(LOG_TAG, "lteOnCdma not set, using PREFERRED_CDMA_SUBSCRIPTION");
-                        break;
-                }
                 Rlog.i(LOG_TAG, "Cdma Subscription set to " + cdmaSubscription);
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
 
                 //reads the system properties and makes commandsinterface
                 String sRILClassname = SystemProperties.get("ro.telephony.ril_class", "RIL");

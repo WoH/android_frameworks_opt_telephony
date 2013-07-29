@@ -503,19 +503,11 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
 
     @Override
     public boolean isConcurrentVoiceAndDataAllowed() {
-<<<<<<< HEAD
-        // For non-LTE, look at the CSS indicator to check on SV capability
-        if (mRilRadioTechnology == ServiceState.RIL_RADIO_TECHNOLOGY_LTE) {
-            return true;
-        } else {
-            return ss.getCssIndicator() == 1;
-=======
         // For non-LTE, look at the CSS indicator to check on Concurrent V & D capability
         if (mSS.getRilDataRadioTechnology() == ServiceState.RIL_RADIO_TECHNOLOGY_LTE) {
             return true;
         } else {
             return mSS.getCssIndicator() == 1;
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
         }
     }
 

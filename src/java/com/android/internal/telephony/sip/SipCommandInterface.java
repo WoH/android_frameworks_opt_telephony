@@ -529,9 +529,8 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     public void getVoiceRadioTechnology(Message result) {
     }
 
-<<<<<<< HEAD
     public boolean needsOldRilFeature(String feature) { return false; }
-=======
+
     @Override
     public void getCellInfoList(Message result) {
     }
@@ -539,5 +538,5 @@ class SipCommandInterface extends BaseCommands implements CommandsInterface {
     @Override
     public void setCellInfoListRate(int rateInMillis, Message response) {
     }
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
+
 }

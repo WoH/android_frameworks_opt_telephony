@@ -157,43 +157,6 @@ public class GSMPhone extends PhoneBase {
         mCi.setOnSuppServiceNotification(this, EVENT_SSN, null);
         mSST.registerForNetworkAttached(this, EVENT_REGISTERED_TO_NETWORK, null);
 
-<<<<<<< HEAD
-        // problem with javac 7 (create an empty class)
-
-        // if (false) {
-        //     try {
-        //         //debugSocket = new LocalServerSocket("com.android.internal.telephony.debug");
-        //         debugSocket = new ServerSocket();
-        //         debugSocket.setReuseAddress(true);
-        //         debugSocket.bind (new InetSocketAddress("127.0.0.1", 6666));
-        //
-        //         debugPortThread
-        //             = new Thread(
-        //                 new Runnable() {
-        //                     public void run() {
-        //                         for(;;) {
-        //                             try {
-        //                                 Socket sock;
-        //                                 sock = debugSocket.accept();
-        //                                 Rlog.i(LOG_TAG, "New connection; resetting radio");
-        //                                 mCM.resetRadio(null);
-        //                                 sock.close();
-        //                             } catch (IOException ex) {
-        //                                 Rlog.w(LOG_TAG,
-        //                                     "Exception accepting socket", ex);
-        //                             }
-        //                         }
-        //                     }
-        //                 },
-        //                 "GSMPhone debug");
-        //
-        //         debugPortThread.start();
-        //
-        //     } catch (IOException ex) {
-        //         Rlog.w(LOG_TAG, "Failure to open com.android.internal.telephony.debug socket", ex);
-        //     }
-        // }
-=======
         if (DBG_PORT) {
             try {
                 //debugSocket = new LocalServerSocket("com.android.internal.telephony.debug");
@@ -228,7 +191,6 @@ public class GSMPhone extends PhoneBase {
                 Rlog.w(LOG_TAG, "Failure to open com.android.internal.telephony.debug socket", ex);
             }
         }
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
 
         //Change the system property
         SystemProperties.set(TelephonyProperties.CURRENT_ACTIVE_PHONE,

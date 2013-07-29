@@ -20,16 +20,13 @@ import android.Manifest;
 import android.app.AppOpsManager;
 import android.app.PendingIntent;
 import android.content.Context;
-<<<<<<< HEAD
 import android.os.Binder;
 import android.os.RemoteException;
-=======
 import android.os.AsyncResult;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.Message;
 import android.telephony.Rlog;
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
 import android.util.Log;
 
 import com.android.internal.telephony.uicc.IccConstants;
@@ -354,19 +351,10 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     @Override
     public void sendText(String callingPackage, String destAddr, String scAddr,
             String text, PendingIntent sentIntent, PendingIntent deliveryIntent) {
-<<<<<<< HEAD
-        if (Binder.getCallingPid() != android.os.Process.myPid()) {
-            mPhone.getContext().enforceCallingPermission(
-                    "android.permission.SEND_SMS",
-                    "Sending SMS message");
-        }
-        if (Log.isLoggable("SMS", Log.VERBOSE)) {
-=======
         mPhone.getContext().enforceCallingPermission(
                 Manifest.permission.SEND_SMS,
                 "Sending SMS message");
         if (Rlog.isLoggable("SMS", Log.VERBOSE)) {
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
             log("sendText: destAddr=" + destAddr + " scAddr=" + scAddr +
                 " text='"+ text + "' sentIntent=" +
                 sentIntent + " deliveryIntent=" + deliveryIntent);
@@ -403,25 +391,15 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
      *   to the recipient.  The raw pdu of the status report is in the
      *   extended data ("pdu").
      */
-<<<<<<< HEAD
+    @Override
     public void sendMultipartText(String destAddr, String scAddr, List<String> parts,
             List<PendingIntent> sentIntents, List<PendingIntent> deliveryIntents) {
         if (Binder.getCallingPid() != android.os.Process.myPid()) {
             mPhone.getContext().enforceCallingPermission(
-                    "android.permission.SEND_SMS",
+                    Manifest.permission.SEND_SMS,
                     "Sending SMS message");
         }
-        if (Log.isLoggable("SMS", Log.VERBOSE)) {
-=======
-    @Override
-    public void sendMultipartText(String callingPackage, String destAddr, String scAddr,
-            List<String> parts, List<PendingIntent> sentIntents,
-            List<PendingIntent> deliveryIntents) {
-        mPhone.getContext().enforceCallingPermission(
-                Manifest.permission.SEND_SMS,
-                "Sending SMS message");
         if (Rlog.isLoggable("SMS", Log.VERBOSE)) {
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c
             int i = 0;
             for (String part : parts) {
                 log("sendMultipartText: destAddr=" + destAddr + ", srAddr=" + scAddr +

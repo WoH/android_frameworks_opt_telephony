@@ -108,17 +108,10 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         ArrayList<byte[]> results;
 
         LoadLinearFixedContext(int efid, int recordNum, Message onLoaded) {
-<<<<<<< HEAD:src/java/com/android/internal/telephony/IccFileHandler.java
-            this.efid = efid;
-            this.recordNum = java.lang.Math.max(recordNum, 1); // Clamp to 1 since the index is 1 based, just in case
-            this.onLoaded = onLoaded;
-            this.loadAll = false;
-=======
             mEfid = efid;
             mRecordNum = recordNum;
             mOnLoaded = onLoaded;
             mLoadAll = false;
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c:src/java/com/android/internal/telephony/uicc/IccFileHandler.java
         }
 
         LoadLinearFixedContext(int efid, Message onLoaded) {
