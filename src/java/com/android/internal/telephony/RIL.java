@@ -749,7 +749,7 @@ public class RIL extends BaseCommands implements CommandsInterface {
         rr.mParcel.writeString(newPin);
 
         if (!oldRil)
-            rr.mp.writeString(aid);
+            rr.mParcel.writeString(aid);
 
         send(rr);
     }
