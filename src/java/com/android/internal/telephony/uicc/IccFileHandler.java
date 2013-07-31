@@ -585,11 +585,7 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
                         throw new IccFileTypeMismatch();
                     }
 
-<<<<<<< HEAD:src/java/com/android/internal/telephony/IccFileHandler.java
-                    lc.recordSize = data[RESPONSE_DATA_RECORD_LENGTH] & 0xFF;
-=======
                 lc.mRecordSize = data[RESPONSE_DATA_RECORD_LENGTH] & 0xFF;
->>>>>>> 9c430a4d72c8c962caefb916e82a4c82eca7068c:src/java/com/android/internal/telephony/uicc/IccFileHandler.java
 
                     size = ((data[RESPONSE_DATA_FILE_SIZE_1] & 0xff) << 8)
                            + (data[RESPONSE_DATA_FILE_SIZE_2] & 0xff);
