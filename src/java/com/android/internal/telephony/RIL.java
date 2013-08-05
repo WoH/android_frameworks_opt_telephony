@@ -3580,7 +3580,7 @@ public class RIL extends BaseCommands implements CommandsInterface {
         } else {
             // Assume this is gsm, but doesn't matter as ServiceStateTracker
             // sets the proper value.
-            SignalStrength signalStrength = SignalStrength.makeSignalStrengthFromRilParcel(p);
+            signalStrength = SignalStrength.makeSignalStrengthFromRilParcel(p);
         }
         return signalStrength;
     }
