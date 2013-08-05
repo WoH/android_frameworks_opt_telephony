@@ -19,6 +19,7 @@ package com.android.internal.telephony;
 import android.content.Context;
 import android.net.LocalServerSocket;
 import android.os.Looper;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.telephony.Rlog;
